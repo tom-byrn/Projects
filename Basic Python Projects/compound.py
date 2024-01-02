@@ -6,7 +6,6 @@ monthly_contributions = 0
 apr = 0
 years = 0
 
-#Final Value = P * ((1+i) * (1+i)**t - 1)/i
 
 #Get each value
 while principle <= 0:
@@ -15,7 +14,7 @@ while principle <= 0:
     except ValueError:
         print("Please enter a numerical value")
     if principle < 0:
-        print("Initial sum must be greater than or equal to zero!")
+        print("Initial sum must be greater than zero!")
     if principle > 0:
         print(f"The initial sum invested is ${principle}")
 
@@ -25,7 +24,7 @@ while monthly_contributions <= 0:
     except ValueError:
         print("Please enter a numerical value")
     if monthly_contributions < 0:
-        print("Must be greater than zero!")
+        print("Monthly contributions must be greater than zero!")
     if monthly_contributions > 0:
         print(f"Your monthly contributions are ${monthly_contributions}")
 
@@ -34,7 +33,7 @@ while apr <= 0:
         apr = float(input("Enter the interest (Annual Percentage Rate): "))
     except ValueError:
         print("Please enter a numerical value from 1-100")
-    if apr < 0 or apr > 100:
+    if apr <= 0 or apr > 100:
         print("Must be between 0 and 100")
     if monthly_contributions > 0:
         print(f"Your APR is {apr}%")
